@@ -1,1 +1,2 @@
 This file allows for automatic updating of the ClinGen BigBed files, both for hg19 and hg38
+Download the folder contents and run the provided "ClinGenGeneDiseaseUpdate.sh" script, uploading the resulting BigBed files to their respective folders in the main branch (hg19/hg38).
