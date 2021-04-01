@@ -11,7 +11,7 @@ import requests
 
 #read in raw data from ClinGen
 
-clingen = pd.read_csv('https://search.clinicalgenome.org/kb/gene-validity.csv', sep = ',', header = 4, skiprows = [5])
+clingen = pd.read_csv('https://search.clinicalgenome.org/kb/gene-validity/download', sep = ',', header = 4, skiprows = [5])
 
 #assign necessary new columns and rearrange
 
@@ -23,7 +23,7 @@ clingen.insert(3,'RGB',0)
 clingen['MOUSEOVER'] = clingen['GENE SYMBOL'] + ' - ' + clingen['DISEASE LABEL'] + ' - ' + clingen['MOI'] + ' (' + clingen['CLASSIFICATION'] + ')'
 clingen['ONLINE REPORT'] = clingen['ONLINE REPORT'].str[51:]
 clingen['CLASSIFICATION DATE'] = clingen['CLASSIFICATION DATE'].str[:10]
-RGB = {'Definitive':'120,0,170','Strong':'0,0,102','Moderate':'0,0,255','Limited':'153,153,255','Disputed':'255,153,51','Refuted':'255,51,51','No Reported Evidence':'0,0,0'}
+RGB = {'Definitive':'120,0,170','Strong':'0,0,102','Moderate':'0,0,255','Limited':'153,153,255','Disputed':'255,153,51','Refuted':'255,51,51','No Known Disease Relationship':'0,0,0'}
 clingen['RGB'] = clingen.apply(lambda x: RGB[x['CLASSIFICATION']], axis=1)
 
 #retrieve raw chromosome data for hg19 genes
