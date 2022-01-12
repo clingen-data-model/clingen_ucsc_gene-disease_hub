@@ -33,7 +33,7 @@ hg19rawdata = hg19raw.json()
 
 #extract relevant chromosomal data from raw json
 
-transdata = pd.DataFrame(index=range(5000),columns = ['chrom','txStart','txEnd','GENE SYMBOL'])
+transdata = pd.DataFrame(index=range(10000),columns = ['chrom','txStart','txEnd','GENE SYMBOL'])
 row = 0
 
 for chrom in hg19rawdata['ncbiRefSeqCurated']:
@@ -70,7 +70,7 @@ hg38rawdata = hg38raw.json()
 
 #extract relevant chromosomal data from raw json
 
-transdata = pd.DataFrame(index=range(5000),columns = ['chrom','txStart','txEnd','GENE SYMBOL'])
+transdata = pd.DataFrame(index=range(10000),columns = ['chrom','txStart','txEnd','GENE SYMBOL'])
 row = 0
 
 for chrom in hg38rawdata['ncbiRefSeqCurated']:

@@ -11,7 +11,7 @@ chmod a+x ./fetchChromSizes
 
 #extract ClinGen raw data and create two Bed files
 printf "INFO: Downloading ClinGen Data and Converting to BED"
-python ./UCSC-ClinGenBedCreator.py
+python3 ./UCSC-ClinGenBedCreator.py
 
 #sort Bed files in prep for bedToBigBed
 wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/bedSort
